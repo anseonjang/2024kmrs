@@ -1,0 +1,129 @@
+/*  border:1px solid red; */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Nanum Gothic';
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+a { color: #fff; text-decoration: none;}
+a:hover {text-decoration: underline;}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+main { 
+    display: flex; 
+    flex-direction: column; /* 모바일에서는 역순으로 배치 */
+    height:auto; background-color: #f1f1f1;
+}
+nav {
+    width: 100%;
+    background-color: #f1f1f1;
+    height: auto; 
+    
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+   
+    
+}
+nav ul li {
+    
+    flex: 1;
+  box-sizing: border-box;
+}
+nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    text-align: center;border-bottom: 1px solid #ddd;
+}
+nav ul li a:hover {
+    background-color: #ddd;
+}
+section { 
+   background-color: #fff;
+    /* border: 1px solid red; */
+    width: calc(100% - 200px);
+    
+}
+section h2,
+section p {padding-left: 20px; }
+
+section p {text-align: justify;}
+section .photo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* 이미지 사이의 간격을 균등하게 배치 */
+}
+section .photo>div {
+
+    margin-bottom: 20px; 
+    overflow: hidden; /* 이미지를 컨테이너 영역 안에 보이도록 설정 */
+    border-radius: 10px; /* 컨테이너에 둥근 사각형 모양을 적용 */
+}
+
+section .photo>div img {
+    display: block;
+    width: 100%;
+    height:100%;
+    border-radius: 10px; /* 이미지에도 둥근 사각형 모양을 적용 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 이미지에 그림자 효과를 추가합니다. */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* 미디어 쿼리 */
+@media screen and (min-width: 768px) {
+    main {
+        flex: 1; /* 나머지 영역을 차지하도록 설정 */
+        display: flex;
+        flex-direction: row; /* 모바일에서는 역순으로 배치되므로 다시 원래대로 변경 */
+    }
+    nav {
+        width: 200px; /* 좌측 nav를 200px로 설정 */
+        height: 70vh;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        border-bottom: none;
+    }
+   
+    section .photo div {
+        flex-basis: calc(25% - 20px); /* PC에서는 3단으로 설정 */
+    }
+ 
+}
+
+@media screen and (max-width: 767px) {
+    section { 
+        padding: 20px;
+        /* border: 1px solid red; */
+        width: calc(100% - 40px);
+    }
+    section .photo div {
+        flex-basis: calc(50% - 20px); /* 모바일에서는 2단으로 설정 */
+    }
+    section h2,
+section p {padding-left: 10px; }
+
+}
